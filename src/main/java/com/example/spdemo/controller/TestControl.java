@@ -10,6 +10,6 @@ public class TestControl {
 
     @RequestMapping("/test")
     public String test(){
-        return "111";
+        return "111修改";
     }
 }
