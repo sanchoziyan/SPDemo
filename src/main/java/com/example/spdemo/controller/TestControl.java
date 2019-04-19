@@ -12,13 +12,13 @@ public class TestControl {
     public String test(String name){
         return "姓名："+name;
     }
-    @RequestMapping("/user")
-    public User getUser(){
+    @RequestMapping("/user")  ///
+    public User getUser(@RequestParam("date") Date date){
         User user = new User();
         user.setAge(18);
-        user.setName("Dava");
-        user.setPass("123");
-        user.setCreateDate(new Date());
+//        user.setName("Dava");
+//        user.setPass("");
+        user.setCreateDate(date);
         return user;
     }
 }
