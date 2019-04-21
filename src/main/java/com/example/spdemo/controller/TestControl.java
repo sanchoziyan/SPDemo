@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 public class TestControl {
@@ -22,11 +23,18 @@ public class TestControl {
     @RequestMapping("/user")  ///
     public User getUser(@RequestParam("date") Date date){
         User user = new User();
-        user.setAge(18);
+        user.setAge(28);
 //        user.setName("Dava");
 //        user.setPass("");
         user.setCreateDate(date);
         return user;
+    }
+
+    @RequestMapping("/date")
+        public Map hello(Map<String, Object> model){
+        model.put("time", new Date());
+        model.put("message", "hello world");
+        return model;
     }
 
     /**
